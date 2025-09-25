@@ -6,6 +6,8 @@ export function Ex2() {
         { id: 2, name: 'Bob', age: 20 },
         { id: 3, name: 'Charlie', age: 18 },
         { id: 4, name: 'David', age: 12 },
+        { id: 5, name: 'Eve', age: 14 },
+        { id: 6, name: 'Frank', age: 22 }
     ];
 
     const sum = numbers.reduce((acc, curr) => acc + curr, 0);
