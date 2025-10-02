@@ -1,0 +1,76 @@
+html, body, #root, .App {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #2e2e2e;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* không cho cuộn */
+}
+
+/* Header & Footer chiếm chiều cao cố định */
+.App > header,
+.App > footer {
+  flex-shrink: 0;
+}
+
+/* Content chiếm phần còn lại */
+.App > main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Bọc toàn bộ để scale */
+.content-inner {
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  transform: scale(var(--scale, 1));
+  transform-origin: top center;
+}
+
+/* Cover image */
+.cover-img {
+  max-height: 25vh;
+  width: auto;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Menu layout */
+.menu-grid {
+  width: 95%;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+
+/* Card */
+.menu-card {
+  flex: 0 0 calc(25% - 12px);
+  max-width: 220px;
+}
+.badge-pos {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 2;
+}
+
+/* Form */
+.form-wrap {
+  width: 100%;
+  max-width: 800px;
+}
