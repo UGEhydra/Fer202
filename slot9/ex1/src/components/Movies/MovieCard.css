@@ -1,0 +1,12 @@
+.movie-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.movie-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+.movie-poster {
+  height: 260px;
+  object-fit: cover;
+  border-radius: 6px 6px 0 0;
+}

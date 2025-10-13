@@ -1,19 +1,17 @@
 import React from "react";
+import MyNavBar from "../components/Navbar/NavBar";
 import HomeCarousel from "../components/Carousel/HomeCarousel";
-import MovieCard from "../components/Movies/MovieCard";  // ✅ thêm dòng này
+import Filter from "../components/Filter/Filter";
 
 export default function HomePage() {
   return (
     <div>
+      <MyNavBar />   {/* ✅ Thanh NavBar nằm ở đầu trang */}
       <HomeCarousel />
-      <div className="mt-4 text-center">
-        <h4>Featured Movies Collections</h4>
-        <p className="text-secondary">
-          Thêm thông tin về các bộ sưu tập phim nổi bật ở đây.
-        </p>
+      <div className="container mt-5">
+        <h4 className="mb-3">🎬 Featured Movies</h4>
+        <Filter />
       </div>
-
-      <MovieCard /> {/* ✅ thêm component hiển thị danh sách phim */}
     </div>
   );
 }

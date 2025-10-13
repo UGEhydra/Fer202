@@ -3,7 +3,7 @@ export const carouselMovies = [
     id: 1,
     title: "Galactic Wars",
     description: "Epic space battles decide the fate of a fractured galaxy.",
-    poster: "/movie1.jpg",
+    poster: "/movie10.jpg",
     genre: "Sci-Fi",
     year: 2022,
     country: "USA",
