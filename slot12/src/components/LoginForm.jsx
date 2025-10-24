@@ -8,6 +8,7 @@ const initialState = {
   emailError: "",
   passwordError: "",
   isSubmitted: false,
+  submitError: "",
 };
 
 // 2️⃣ Định nghĩa reducer
@@ -35,7 +36,6 @@ function reducer(state, action) {
 
     case "SUBMIT":
       return { ...state, isSubmitted: true };
-
     case "RESET":
       return { ...initialState };
 
@@ -47,7 +47,7 @@ function reducer(state, action) {
 // 3️⃣ Component chính
 function LoginForm() {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { email, password, emailError, passwordError, isSubmitted } = state;
+  const { email, password, emailError, passwordError, isSubmitted, submitError } = state;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -63,12 +63,19 @@ function LoginForm() {
       password.length >= 6
     ) {
       dispatch({ type: "SUBMIT" });
+    } else {
+      dispatch({ type: "SUBMIT_ERROR" });
     }
   };
 
   return (
     <Card className="p-4" style={{ width: "400px", margin: "50px auto" }}>
       <h3 className="text-center mb-3">Đăng nhập</h3>
+      {submitError && (
+        <Alert variant="danger" className="text-center">
+          {state.submitError}
+        </Alert>
+      )}
 
       {isSubmitted && (
         <Alert variant="success" className="text-center">
@@ -111,7 +118,7 @@ function LoginForm() {
           <Button
             type="submit"
             variant="primary"
-            disabled={!email || !password}
+            
           >
             Đăng nhập
           </Button>{" "}

@@ -33,9 +33,9 @@ const initialState = {
   selectedOption: "",
   score: 0,
   showScore: false,
-  feedback: "", // ✅ phản hồi đúng/sai
-  timeLeft: 10, // ⏱️ thời gian mỗi câu
-  highScore: 0, // 💾 điểm cao nhất (localStorage)
+  feedback: "", 
+  timeLeft: 10,
+  highScore: 0, 
 };
 
 // 2️⃣ Reducer chính
