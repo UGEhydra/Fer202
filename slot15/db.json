@@ -1,7 +1,17 @@
-{ 
+{
   "accounts": [
-    { "id": 1, "username": "admin", "password": "123", "fullname": "Admin User" },
-    { "id": 2, "username": "staff", "password": "123", "fullname": "Staff Member" }
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "123",
+      "fullname": "Admin User"
+    },
+    {
+      "id": 2,
+      "username": "staff",
+      "password": "123",
+      "fullname": "Staff Member"
+    }
   ],
   "genres": [
     {
@@ -42,7 +52,7 @@
       "genreId": 1,
       "year": 2022,
       "country": "USA",
-      "duration": 133
+      "duration": 132
     },
     {
       "id": "2",
@@ -53,6 +63,65 @@
       "year": 2021,
       "country": "UK",
       "duration": 105
+    },
+    {
+      "id": "3",
+      "title": "The Drama Club",
+      "description": "A heartfelt drama about a group of friends navigating life's challenges.",
+      "avatar": "https://tse3.mm.bing.net/th/id/OIP.a00tXI0fiedrj_BcQK4N3AHaJ3?pid=Api&P=0&h=180",
+      "genreId": 3,
+      "year": 2021,
+      "country": "UK",
+      "duration": 105
+    },
+    {
+      "id": "4",
+      "title": "Haunted Nights",
+      "description": "A chilling horror story that will keep you on the edge of your seat.",
+      "avatar": "https://images.playground.com/fbbafcfe-e58f-465a-91d9-ca647bc043a6.jpeg",
+      "genreId": 4,
+      "year": 2021,
+      "country": "UK",
+      "duration": 105
+    },
+    {
+      "id": "5",
+      "title": "Love Story",
+      "description": "A romantic tale set in the city of love.",
+      "avatar": "https://i.pinimg.com/originals/8c/e8/fe/8ce8fe9b4dc2ae3922a83eaf607691c4.jpg",
+      "genreId": 5,
+      "year": 2021,
+      "country": "UK",
+      "duration": 105
+    },
+    {
+      "id": "6",
+      "title": "Action Heroes",
+      "description": "High-octane action sequences and thrilling adventures.",
+      "avatar": "https://www.vintagemovieposters.co.uk/wp-content/uploads/2022/09/IMG_7675-scaled.jpeg",
+      "genreId": 6,
+      "year": 2021,
+      "country": "UK",
+      "duration": 105
+    },
+    {
+      "id": "7",
+      "title": "Shutter Island",
+      "description": "A psychological thriller that will keep you guessing until the end.",
+      "avatar": "https://www.boredpanda.com/blog/wp-content/uploads/2022/05/best-thriller-movies-53-628c95ea5bf80__700.jpg",
+      "genreId": 7,
+      "year": 2021,
+      "country": "UK",
+      "duration": 105
+    },
+    {
+      "id": "8",
+      "avatar": "https://tse1.mm.bing.net/th/id/OIP.GINOwmLnPWy1b889gXbX_AHaJQ?pid=Api&P=0&h=180",
+      "title": "avatar",
+      "description": "một bộ phim khoa học viễn tưởng ",
+      "genreId": 1,
+      "duration": 183,
+      "year": 2015
     }
   ]
 }

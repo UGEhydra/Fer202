@@ -5,7 +5,8 @@ export const initialMovieState = {
   currentMovie: { avatar: '', title: '', description: '', genreId: '', duration: '', year: '' },
   showEditModal: false,
   showDeleteModal: false,
-  movieToDelete: null
+  movieToDelete: null,
+   searchTerm: "", 
 };
 
 export const movieReducer = (state, action) => {
@@ -26,6 +27,8 @@ export const movieReducer = (state, action) => {
       return { ...state, movieToDelete: null, showDeleteModal: false };
     case 'RESET_FORM':
       return { ...state, currentMovie: initialMovieState.currentMovie, isEditing: null, showEditModal: false };
+          case 'SET_SEARCH_TERM':
+      return { ...state, searchTerm: action.payload };
     default:
       return state;
   }
