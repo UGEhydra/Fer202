@@ -1,0 +1,58 @@
+{ 
+  "accounts": [
+    { "id": 1, "username": "admin", "password": "123", "fullname": "Admin User" },
+    { "id": 2, "username": "staff", "password": "123", "fullname": "Staff Member" }
+  ],
+  "genres": [
+    {
+      "id": "1",
+      "name": "Sci-Fi"
+    },
+    {
+      "id": "2",
+      "name": "Comedy"
+    },
+    {
+      "id": "3",
+      "name": "Drama"
+    },
+    {
+      "id": "4",
+      "name": "Horror"
+    },
+    {
+      "id": "5",
+      "name": "Romance"
+    },
+    {
+      "id": "6",
+      "name": "Action"
+    },
+    {
+      "id": "7",
+      "name": "Thriller"
+    }
+  ],
+  "movies": [
+    {
+      "id": "1",
+      "title": "Galactic Wars",
+      "description": "Epic space battles decide the fate of a fractured galaxy.",
+      "avatar": "https://i.ytimg.com/vi/PdwwK7HFfNA/maxresdefault.jpg",
+      "genreId": 1,
+      "year": 2022,
+      "country": "USA",
+      "duration": 133
+    },
+    {
+      "id": "2",
+      "title": "Laugh Out Loud",
+      "description": "A feel-good comedy about friendship.",
+      "avatar": "https://tse2.mm.bing.net/th/id/OIP.fQ8c3Yfuyeju_8qPj3vq2QHaHQ?pid=Api&P=0&h=180",
+      "genreId": 2,
+      "year": 2021,
+      "country": "UK",
+      "duration": 105
+    }
+  ]
+}
