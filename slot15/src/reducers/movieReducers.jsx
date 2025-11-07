@@ -1,35 +1,38 @@
-export const initialMovieState = {
+// ✅ Trạng thái ban đầu
+const initialMovieState = {
   movies: [],
   loading: false,
-  isEditing: null,
-  currentMovie: { avatar: '', title: '', description: '', genreId: '', duration: '', year: '' },
-  showEditModal: false,
+  error: "",
   showDeleteModal: false,
   movieToDelete: null,
-   searchTerm: "", 
+  searchTerm: "",
 };
 
-export const movieReducer = (state, action) => {
+// ✅ Hàm reducer chính
+export default function movieReducer(state, action) {
   switch (action.type) {
-    case 'SET_MOVIES':
-      return { ...state, movies: action.payload, loading: false };
-    case 'START_LOADING':
+    case "START_LOADING":
       return { ...state, loading: true };
-    case 'UPDATE_FIELD':
-      return { ...state, currentMovie: { ...state.currentMovie, [action.payload.name]: action.payload.value } };
-    case 'OPEN_EDIT_MODAL':
-      return { ...state, currentMovie: action.payload, isEditing: action.payload.id, showEditModal: true };
-    case 'CLOSE_EDIT_MODAL':
-      return { ...state, currentMovie: initialMovieState.currentMovie, isEditing: null, showEditModal: false };
-    case 'OPEN_DELETE_MODAL':
-      return { ...state, movieToDelete: action.payload, showDeleteModal: true };
-    case 'CLOSE_DELETE_MODAL':
-      return { ...state, movieToDelete: null, showDeleteModal: false };
-    case 'RESET_FORM':
-      return { ...state, currentMovie: initialMovieState.currentMovie, isEditing: null, showEditModal: false };
-          case 'SET_SEARCH_TERM':
-      return { ...state, searchTerm: action.payload };
+
+    case "SET_MOVIES":
+      return { ...state, loading: false, movies: action.payload };
+
+    case "SET_ERROR":
+      return { ...state, loading: false, error: action.payload };
+
+    case "OPEN_DELETE_MODAL":
+      return { ...state, showDeleteModal: true, movieToDelete: action.payload };
+
+    case "CLOSE_DELETE_MODAL":
+      return { ...state, showDeleteModal: false, movieToDelete: null };
+
+    case "RESET_FORM":
+      return { ...state, currentMovie: null, isEditing: null };
+
     default:
       return state;
   }
-};
+}
+
+// ✅ Export thêm cho useReducer sử dụng
+export { initialMovieState };

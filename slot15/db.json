@@ -1,13 +1,13 @@
 {
   "accounts": [
     {
-      "id": 1,
+      "id": "1",
       "username": "admin",
       "password": "123",
       "fullname": "Admin User"
     },
     {
-      "id": 2,
+      "id": "2",
       "username": "staff",
       "password": "123",
       "fullname": "Staff Member"
@@ -113,15 +113,6 @@
       "year": 2021,
       "country": "UK",
       "duration": 105
-    },
-    {
-      "id": "8",
-      "avatar": "https://tse1.mm.bing.net/th/id/OIP.GINOwmLnPWy1b889gXbX_AHaJQ?pid=Api&P=0&h=180",
-      "title": "avatar",
-      "description": "một bộ phim khoa học viễn tưởng ",
-      "genreId": 1,
-      "duration": 183,
-      "year": 2015
     }
   ]
 }

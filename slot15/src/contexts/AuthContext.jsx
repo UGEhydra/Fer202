@@ -6,14 +6,14 @@ const AuthContext = createContext();
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null); // user info khi đăng nhập
+  const [user, setUser] = useState(null);
   const [error, setError] = useState("");
 
   const login = async (username, password) => {
     try {
       const res = await movieApi.get("/accounts");
       const found = res.data.find(
-        acc => acc.username === username && acc.password === password
+        (acc) => acc.username === username && acc.password === password
       );
       if (found) {
         setUser(found);
@@ -30,7 +30,10 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const logout = () => setUser(null);
+  // ✅ Thêm hàm logout
+  const logout = () => {
+    setUser(null);
+  };
 
   return (
     <AuthContext.Provider value={{ user, error, login, logout }}>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Container, Button } from "react-bootstrap";
+import { Navbar, Nav, Button, Container } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 
@@ -7,22 +7,31 @@ const Header = () => {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
 
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
+
   return (
-    <Navbar bg="dark" variant="dark" className="mb-4">
-      <Container className="d-flex justify-content-between">
-        <Navbar.Brand>🎬 Movie System</Navbar.Brand>
-        {user ? (
-          <div className="text-white d-flex align-items-center gap-3">
-            <span>Xin chào, <strong>{user.fullname}</strong></span>
-            <Button variant="outline-light" size="sm" onClick={() => { logout(); navigate("/"); }}>
-              Đăng xuất
+    <Navbar bg="dark" variant="dark" expand="lg">
+      <Container>
+        <Navbar.Brand href="/">🎬 MovieZone</Navbar.Brand>
+        <Nav className="ms-auto">
+          {user ? (
+            <>
+              <Navbar.Text className="me-3 text-light">
+                Xin chào, <strong>{user.username}</strong>
+              </Navbar.Text>
+              <Button variant="outline-light" onClick={handleLogout}>
+                Đăng xuất
+              </Button>
+            </>
+          ) : (
+            <Button variant="outline-light" onClick={() => navigate("/login")}>
+              Đăng nhập
             </Button>
-          </div>
-        ) : (
-          <Button variant="outline-light" size="sm" onClick={() => navigate("/")}>
-            Đăng nhập
-          </Button>
-        )}
+          )}
+        </Nav>
       </Container>
     </Navbar>
   );

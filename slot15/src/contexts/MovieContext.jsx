@@ -1,6 +1,17 @@
 import React, { createContext, useReducer, useContext, useEffect, useCallback } from 'react';
-import { movieReducer, initialMovieState } from '../reducers/movieReducers';
+import movieReducer from "../reducers/movieReducers";
 import movieApi from '../api/movieAPI';
+
+// ✅ Trạng thái khởi tạo ban đầu của MovieContext
+const initialMovieState = {
+  movies: [],
+  loading: false,
+  error: "",
+  showDeleteModal: false,
+  movieToDelete: null,
+  searchTerm: "",
+};
+
 
 export const MovieStateContext = createContext(initialMovieState);
 export const MovieDispatchContext = createContext(null);

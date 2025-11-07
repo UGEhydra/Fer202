@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { Form, Button, Container, Alert, Modal } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import PropTypes from "prop-types";
 import axios from "axios";
+import { useAuth } from "../contexts/AuthContext";
 
-const LoginPage = ({ setUser }) => {
+const LoginPage = () => {
   const [form, setForm] = useState({ username: "", password: "" });
   const [error, setError] = useState("");
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
+  const { login } = useAuth(); // ✅ dùng login từ context
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -18,17 +19,19 @@ const LoginPage = ({ setUser }) => {
     e.preventDefault();
 
     if (!form.username.trim() || !form.password.trim()) {
-    setError("Username and password are required.");
-    return;
-  }
+      setError("Username and password are required.");
+      return;
+    }
+
     try {
       const res = await axios.get("http://localhost:4000/users");
       const user = res.data.find(
         (u) =>
           u.username === form.username && u.password === form.password
       );
+
       if (user) {
-        setUser(user);
+        login(user); // ✅ cập nhật user vào context
         setError("");
         setShowModal(true);
         setTimeout(() => {
@@ -49,7 +52,7 @@ const LoginPage = ({ setUser }) => {
     setError("");
   };
 
-   return (
+  return (
     <Container className="mt-5 d-flex justify-content-center">
       <div className="p-4 shadow-lg rounded bg-white" style={{ width: "400px" }}>
         <h3 className="text-center mb-4">Login</h3>
@@ -77,6 +80,12 @@ const LoginPage = ({ setUser }) => {
             />
           </Form.Group>
 
+          {error && (
+            <Alert variant="danger" className="mt-3 text-center">
+              {error}
+            </Alert>
+          )}
+
           <div className="d-flex justify-content-between">
             <Button type="submit" variant="primary">
               Login
@@ -87,14 +96,6 @@ const LoginPage = ({ setUser }) => {
           </div>
         </Form>
 
-        {/* ✅ hiển thị alert nếu có lỗi */}
-        {error && (
-          <Alert variant="danger" className="mt-3 text-center">
-            {error}
-          </Alert>
-        )}
-
-        {/* Modal chào mừng */}
         <Modal show={showModal} onHide={() => setShowModal(false)} centered>
           <Modal.Header closeButton>
             <Modal.Title>Login Successful</Modal.Title>
@@ -106,10 +107,6 @@ const LoginPage = ({ setUser }) => {
       </div>
     </Container>
   );
-};
-
-LoginPage.propTypes = {
-  setUser: PropTypes.func.isRequired,
 };
 
 export default LoginPage;

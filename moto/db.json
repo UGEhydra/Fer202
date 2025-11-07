@@ -1,44 +1,55 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "admin",
       "password": "123456"
     },
     {
-      "id": 2,
+      "id": "2",
       "username": "user",
       "password": "user123"
     }
   ],
   "motorbikes": [
     {
-      "id": 1,
+      "id": "1",
       "brand": "Yamaha",
       "model": "Exciter 155",
       "year": 2023,
       "price": 48000,
-      "stock": 5,
+      "stock": 13,
       "image": "https://example.com/exciter.jpg"
     },
     {
-      "id": 2,
+      "id": "2",
       "brand": "Honda",
       "model": "Winner X",
       "year": 2024,
       "price": 49000,
-      "stock": 3,
+      "stock": 28,
       "image": "https://example.com/winnerx.jpg"
     },
     {
-      "id": 3,
+      "id": "3",
       "brand": "Suzuki",
       "model": "Raider R150",
       "year": 2022,
       "price": 46000,
-      "stock": 4,
+      "stock": 13,
       "image": "https://example.com/raider.jpg"
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": "1",
+      "brand": "Yamaha",
+      "model": "Exciter 155",
+      "year": 2023,
+      "price": 48000,
+      "stock": 13,
+      "image": "https://example.com/exciter.jpg",
+      "quantity": 1
+    }
+  ]
 }
